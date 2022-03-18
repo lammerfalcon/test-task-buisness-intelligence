@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.totalCards.length == 0">Карточек нет</div>
+  <div class="no-cards" v-if="this.totalCards.length == 0">No Cards ;(</div>
   <div class="cards-section">
     <draggable
       :sort="this.$store.state.card.draggable"
@@ -65,5 +65,10 @@ export default {
       font-size: 2rem;
     }
   }
+}
+.no-cards {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
 }
 </style>
