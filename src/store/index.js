@@ -19,7 +19,7 @@ export default createStore({
       localStorage.setItem("card", JSON.stringify(state.card));
       state.totalCards.length = 0;
       for (let i = 0; i < state.card.totalNumber; i++) {
-        if (state.totalCards.length < 16) {
+        if (state.totalCards.length < 100) {
           state.totalCards.push(state.card);
         }
       }

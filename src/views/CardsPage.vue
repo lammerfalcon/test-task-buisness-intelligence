@@ -1,32 +1,42 @@
 <template>
+  <div v-if="this.totalCards.length == 0">Карточек нет</div>
   <div class="cards-section">
-    <ul class="cards-list">
-      <li
-        :draggable="this.$store.state.card.draggable"
+    <draggable
+      :sort="this.$store.state.card.draggable"
+      class="cards-list"
+      :list="list"
+    >
+      <div
         class="cards-list__item"
-        v-for="(card, id) in this.totalCards"
-        :key="id"
         :style="{ backgroundColor: randomColor(id) }"
+        v-for="(card, id) in this.totalCards"
+        :key="card.title"
       >
         <h3>{{ card.title }}</h3>
         <p>{{ card.body }}</p>
-      </li>
-    </ul>
+      </div>
+    </draggable>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-
+import { VueDraggableNext } from "vue-draggable-next";
+// import Draggable from "vue3-draggable";
 export default {
+  components: {
+    // eslint-disable-next-line vue/no-unused-components
+    draggable: VueDraggableNext,
+  },
   name: "CardsPage",
   data() {
     return {
-      colorCache: {},
+      colorCache: [],
     };
   },
   methods: {
     randomColor(id) {
+      console.log(id);
       const r = () => Math.floor(256 * Math.random());
       return (
         this.colorCache[id] ||
