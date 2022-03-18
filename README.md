@@ -1,6 +1,6 @@
 # business-intelligence
-###Vue 3 An application that shows data depending on the settings made. It is possible to download settings in JSON format. 
-##Stack: Vue 3, Vue-router, Vuex 4, Scss, Vue3-draggable
+### Vue 3 An application that shows data depending on the settings made. It is possible to download settings in JSON format. 
+## Stack: Vue 3, Vue-router, Vuex 4, Scss, Vue3-draggable
 ![alt text](/src/assets/img.png)
 ![alt text](/src/assets/img_1.png)
 ## Project setup
